@@ -1,0 +1,212 @@
+/*Core styles*/
+body {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+    color:#fff;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align:center;
+
+}
+img{
+    display:block;
+    width:100%;
+    height:auto;
+    
+}
+h1,h2,h3{
+    margin:0;
+    /*1em top nad bottom zero on left and right*/
+    padding:1em 0;
+}
+p{
+    margin:0;
+    padding:1em 0;
+}
+.btn{
+    display:inline-block;
+    background:#333;
+    color:#fff;
+    text-decoration:none;
+    padding:1em 2em;
+    border:1px solid #666;
+    margin:.5em 0;
+
+}
+.btn:hover{
+    background: #eaeaea;
+    color:#333;
+}
+/*Header showcase*/
+#showcase{
+    min-height:450px;
+    color:#fff;
+    text-align: center;/* Mada smo ovo već dodali u body ali ok*/
+
+}
+#showcase .bg-image{
+    position: absolute;
+    background: #333 url('https://images.pexels.com/photos/247791/pexels-photo-247791.png?w=1260&h=750&auto=compress&cs=tinysrgb');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height:450px;/*Mora da bude kao i parent u ovom slučaju #showcase*/
+    /*Na ovaj način je slika postavljena preko teksta ništa se ne vidi stoga moramo da koristimo z-index*/
+    z-index: -1;
+    /*Sad ćemo malo zamgliti image zbog bolje čitljivosti*/
+    opacity: 0.4;
+}
+#showcase h1{
+    padding-top: 100px;
+    padding-bottom:0;
+}
+/*Kada smanjimo sve text je isuviše blizu ivicama to ćemo ispraviti*/
+#showcase .content-wrap,
+#section-a .content-wrap{
+    padding:0 1.5em;
+}
+/*Section A*/
+#section-a{
+    background: #eaeaee;
+    color:#333;
+    padding-bottom: 2em; 
+}
+/*Section B*/
+#section-b{
+    padding:2em 1em 1em;
+
+}
+#section-b ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+#section-b li{
+    margin-bottom: 1em;
+    background: #fff;
+    color:#333;
+    }
+    .card-content{
+       padding:1.5em; 
+    }
+    /*Section C*/
+    #section-c{
+        background: #fff;
+        color: #333;
+        padding: 2em;
+    }
+    /*Section D*/
+    #section-d .box{
+        padding:2em;
+        color:#fff;
+    }
+    #section-d .box:first-child{
+        background: #2690d4;
+    }
+    /*Footer*/
+    #main-footer{
+        padding: 2em;
+        background: #000;
+        color:#fff;
+        text-align: center;
+
+    }
+    #main-footer a{
+        color:#2690d4;
+        text-decoration:none;
+    }
+    /*Sada moramo da preuredimo za veće ekrane pa dodajemo media querie*/
+    @media (min-width: 700px){
+        .grid{
+            display:grid; /*Sve smo stavili izmedju 2 i 4 linije ali smo i malo razvukli*/
+            grid-template-columns: 1fr repeat(2,minmax(auto,25em)) 1fr;
+        }
+        #section-a .content-text{
+            columns:2;
+            column-gap:2em;
+
+        }
+        #section-a .content-text p{
+           padding-top:0;
+            
+        }
+        .content-wrap, 
+        #section-b ul{
+        grid-column:2/4;
+        }
+        /*Ovde sredjujemo footer i contact us*/
+        .box,#main-footer div{
+            grid-column:span 2;
+        }
+       
+         #main-footer div{
+            grid-column:1/6;
+           
+        }
+        #main-footer div:nth-child(2){
+            
+            grid-column:5/6;
+        }
+        #section-b ul {
+            display:flex;
+            justify-content: space-around;
+        }
+        #section-b li {
+            width:15em;
+        }
+    }
+
+    #nav{
+        /*display:inline-block;*/
+        position:fixed;
+        right:5%;
+        width:100px;
+        border:1px solid rgb(11, 171, 235);
+        color:rgb(11, 171, 235);
+        background: none;
+        padding:.7em;
+        margin-top:1.5em;
+       /* margin-left:1em;*/
+       z-index:1;
+
+    }
+/*-----------------------------------*/
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #333; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    opacity: 0.8;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    
+   
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(11, 171, 235);
+    display: block;
+    transition: 0.3s;
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
