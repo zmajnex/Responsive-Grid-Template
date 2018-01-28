@@ -1,4 +1,4 @@
-/*Core styles*/
+/*Major styles*/
 body {
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +17,7 @@ img{
 }
 h1,h2,h3{
     margin:0;
-    /*1em top nad bottom zero on left and right*/
+    
     padding:1em 0;
 }
 p{
@@ -42,7 +42,7 @@ p{
 #showcase{
     min-height:450px;
     color:#fff;
-    text-align: center;/* Mada smo ovo već dodali u body ali ok*/
+    text-align: center;
 
 }
 #showcase .bg-image{
@@ -52,17 +52,17 @@ p{
     background-repeat: no-repeat;
     background-size: cover;
     width:100%;
-    height:450px;/*Mora da bude kao i parent u ovom slučaju #showcase*/
-    /*Na ovaj način je slika postavljena preko teksta ništa se ne vidi stoga moramo da koristimo z-index*/
+    /*Must have same height as a parent element #showcase*/
+    height:450px;
+    /*Set image behind text using z-index*/
     z-index: -1;
-    /*Sad ćemo malo zamgliti image zbog bolje čitljivosti*/
     opacity: 0.4;
 }
 #showcase h1{
     padding-top: 100px;
     padding-bottom:0;
 }
-/*Kada smanjimo sve text je isuviše blizu ivicama to ćemo ispraviti*/
+
 #showcase .content-wrap,
 #section-a .content-wrap{
     padding:0 1.5em;
@@ -117,10 +117,10 @@ p{
         color:#2690d4;
         text-decoration:none;
     }
-    /*Sada moramo da preuredimo za veće ekrane pa dodajemo media querie*/
+    /*Larger screen*/
     @media (min-width: 700px){
         .grid{
-            display:grid; /*Sve smo stavili izmedju 2 i 4 linije ali smo i malo razvukli*/
+            display:grid; 
             grid-template-columns: 1fr repeat(2,minmax(auto,25em)) 1fr;
         }
         #section-a .content-text{
@@ -136,7 +136,7 @@ p{
         #section-b ul{
         grid-column:2/4;
         }
-        /*Ovde sredjujemo footer i contact us*/
+        /*Section-D and footer  */
         .box,#main-footer div{
             grid-column:span 2;
         }
@@ -157,9 +157,9 @@ p{
             width:15em;
         }
     }
-
+    /* Position and style the nav button (top right corner) */
     #nav{
-        /*display:inline-block;*/
+       
         position:fixed;
         right:5%;
         width:100px;
@@ -168,11 +168,10 @@ p{
         background: none;
         padding:.7em;
         margin-top:1.5em;
-       /* margin-left:1em;*/
-       z-index:1;
+        z-index:1;
 
     }
-/*-----------------------------------*/
+/*---------SIDE NAVIGATION-------------*/
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -190,7 +189,6 @@ p{
 /* The navigation menu links */
 .sidenav a {
     
-   
     text-decoration: none;
     font-size: 20px;
     color: rgb(11, 171, 235);
